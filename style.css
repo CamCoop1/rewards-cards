@@ -1,0 +1,91 @@
+:root {
+  --bg: #111111;
+  --surface: #1c1c1e;
+  --text: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.view { display: none; padding: env(safe-area-inset-top) 16px 16px; }
+.view.active { display: block; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+header h1 { font-size: 1.2rem; margin: 0; }
+
+.icon-btn {
+  background: var(--surface);
+  border: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon-btn.danger { color: #ff453a; }
+
+.card-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+
+.card-item {
+  background: var(--surface);
+  border-left: 6px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-item .name { font-weight: 600; font-size: 1.05rem; }
+.card-item .type { color: var(--muted); font-size: 0.8rem; }
+
+.empty-msg { color: var(--muted); text-align: center; margin-top: 60px; display: none; }
+
+#cardForm { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
+
+#cardForm label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--muted); }
+
+#cardForm input, #cardForm select {
+  background: var(--surface);
+  border: 1px solid #333;
+  color: var(--text);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.detail-header { justify-content: space-between; }
+
+.detail-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 20px;
+  text-align: center;
+  color: #111;
+}
+
+.detail-content h2 { margin-top: 0; }
+
+#barcodeWrap { display: flex; justify-content: center; margin: 20px 0; }
+#barcodeWrap svg, #barcodeWrap canvas { max-width: 100%; }
+
+.value-text { color: #555; font-size: 0.9rem; letter-spacing: 1px; }
