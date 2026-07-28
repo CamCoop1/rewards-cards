@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Rewards Cards</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111111">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="listView" class="view active">
+  <header>
+    <h1>Rewards Cards</h1>
+    <button id="addBtn" class="icon-btn">+</button>
+  </header>
+  <div id="cardList" class="card-list"></div>
+  <p id="emptyMsg" class="empty-msg">No cards yet. Tap + to add one.</p>
+</div>
+
+<div id="formView" class="view">
+  <header>
+    <button id="cancelBtn" class="icon-btn">←</button>
+    <h1>Add Card</h1>
+    <button id="saveBtn" class="icon-btn">✓</button>
+  </header>
+  <form id="cardForm">
+    <label>Label
+      <input type="text" id="fLabel" placeholder="e.g. Trader Joe's" required>
+    </label>
+    <label>Barcode Value
+      <input type="text" id="fValue" placeholder="e.g. 012345678905" required>
+    </label>
+    <label>Barcode Type
+      <select id="fFormat">
+        <option value="CODE128">Code 128 (most common)</option>
+        <option value="EAN13">EAN-13</option>
+        <option value="UPC">UPC-A</option>
+        <option value="CODE39">Code 39</option>
+        <option value="QR">QR Code</option>
+      </select>
+    </label>
+    <label>Color tag
+      <input type="color" id="fColor" value="#3b82f6">
+    </label>
+  </form>
+</div>
+
+<div id="detailView" class="view">
+  <header class="detail-header">
+    <button id="backBtn" class="icon-btn">←</button>
+    <button id="deleteBtn" class="icon-btn danger">🗑</button>
+  </header>
+  <div class="detail-content">
+    <h2 id="detailLabel"></h2>
+    <div id="barcodeWrap"></div>
+    <p id="detailValue" class="value-text"></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
